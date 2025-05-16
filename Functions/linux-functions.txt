@@ -1,0 +1,206 @@
+Category	Type	Alias	Name	Args	Args Transform	Description	Link
+Clock	Modify	adjust_time	adjtimex			Tunes the kernel clock.	https://man7.org/linux/man-pages/man2/adjtimex.2.html
+Clock	Modify	adjust_time	clock_adjtime			Tunes the kernel clock.	https://man7.org/linux/man-pages/man2/clock_adjtime.2.html
+Clock	Modify	adjust_time	ntp_adjtime			Tunes the kernel clock.	https://man7.org/linux/man-pages/man2/adjtimex.2.html
+Clock	Read	clock_get_resolution	clock_getres			Finds the resolution (precision) of the specified clock.	https://man7.org/linux/man-pages/man2/clock_getres.2.html
+Clock	Read	clock_get_time	clock_gettime			Gets the time of the specified clock.	https://man7.org/linux/man-pages/man2/clock_gettime.2.html
+Clock	Modify	clock_set_time	clock_settime			Sets the time of the specified clock.	https://man7.org/linux/man-pages/man2/clock_settime.2.html
+Clock	Read	get_time_of_day	gettimeofday			Gets the system time and a timezone.	https://man7.org/linux/man-pages/man2/gettimeofday.2.html
+Clock	Modify	set_time_of_day	settimeofday			Sets the system time and a timezone.	https://man7.org/linux/man-pages/man2/settimeofday.2.html
+Clock	Read	time	time			Gets seconds since the Epoch.	https://man7.org/linux/man-pages/man2/time.2.html
+Credentials	Read	get_TID	gettid			Gets the caller's thread ID (TID).	https://man7.org/linux/man-pages/man2/gettid.2.html
+Credentials	Read	get_PID	getpid			Gets the process ID (PID)	https://man7.org/linux/man-pages/man2/getpid.2.html
+Credentials	Read	get_PPID	getppid			Gets the process ID of the parent of the calling process.	https://man7.org/linux/man-pages/man2/getppid.2.html
+Credentials	Read	get_SID	getsid			Gets the session ID of the process with the given process ID.	https://man7.org/linux/man-pages/man2/getsid.2.html
+Credentials	Create	set_SID	setsid			Creates a new session if the calling process is not a process group leader.	https://man7.org/linux/man-pages/man2/setsid.2.html
+Credentials	Read	get_GID	getgid			Gets the real group ID of the calling process.	https://man7.org/linux/man-pages/man2/getgid.2.html
+Credentials	Modify	set_GID	setgid			Sets the effective group ID of the calling process.	https://man7.org/linux/man-pages/man2/setgid.2.html
+Credentials	Read	get_EGID	getegid			Gets the effective group ID (EGID) of the calling process.	https://man7.org/linux/man-pages/man2/getegid.2.html
+Credentials	Modify	set_EGID	setegid			Sets the effective group ID (EGID) of the calling process.	https://man7.org/linux/man-pages/man2/setegid.2.html
+Credentials	Read	get_PGID	getpgid			Gets the process group ID (PGID) of the process by its ID.	https://man7.org/linux/man-pages/man2/getpgid.2.html
+Credentials	Modify	set_PGID	setpgid			Sets the process group ID (PGID) of the process by its ID.	https://man7.org/linux/man-pages/man2/setpgid.2.html
+Credentials	Read	get_p_group	getpgrp			Gets the process group ID (PGID) of the calling proccess.	https://man7.org/linux/man-pages/man2/getpgrp.2.html
+Credentials	Modify	set_p_group	setpgrp			Sets the process group ID (PGID) of the calling proccess.	https://man7.org/linux/man-pages/man2/setpgrp.2.html
+Credentials	Read	get_groups	getgroups			Gets the supplementary group IDs of the calling process.	https://man7.org/linux/man-pages/man2/getgroups.2.html
+Credentials	Modify	set_groups	setgroups			Sets the supplementary group IDs for the calling process.	https://man7.org/linux/man-pages/man2/setgroups.2.html
+Credentials	Read	get_r_e_s_GID	getresgid			"Gets the real user ID (RUID), the effective user ID (EUID), and the saved set-user-ID (SUID) of the calling process."	https://man7.org/linux/man-pages/man2/getresgid.2.html
+Credentials	Modify	set_r_e_s_GID	setresgid			"Sets the real user ID (RUID), the effective user ID (EUID), and the saved set-user-ID (SUID) of the calling process."	https://man7.org/linux/man-pages/man2/setresgid.2.html
+Credentials	Modify	set_fs_GID	setfsgid			Sets the group identity used for filesystem checks.	https://man7.org/linux/man-pages/man2/setfsgid.2.html
+Credentials	Modify	set_fs_UID	setfsuid			Sets the user identity used for filesystem checks.	https://man7.org/linux/man-pages/man2/setfsuid.2.html
+Credentials	Modify	set_r_e_GID	setregid			Sets real and effective group ID's of the calling process.	https://man7.org/linux/man-pages/man2/setregid.2.html
+Credentials	Modify	set_r_e_UID	setreuid	ruid;euid		Sets real and effective user IDs of the calling process.	https://man7.org/linux/man-pages/man2/setreuid.2.html
+Credentials	Read	get_UID	getuid			Gets the real user ID of the calling process.	https://man7.org/linux/man-pages/man2/getuid.2.html
+Credentials	Modify	set_UID	setuid	uid		Sets the effective user ID of the calling process.	https://man7.org/linux/man-pages/man2/setuid.2.html
+Credentials	Read	get_EUID	geteuid			Gets the effective user ID (EUID) of the calling process.	https://man7.org/linux/man-pages/man2/geteuid.2.html
+Credentials	Modify	set_EUID	seteuid	euid		Sets the effective user ID (EUID) of the calling process.	https://man7.org/linux/man-pages/man2/seteuid.2.html
+Credentials	Read	get_r_e_s_UID	getresuid			"Gets the real UID, the effective UID, and the saved set-user-ID of the calling process."	https://man7.org/linux/man-pages/man2/getresuid.2.html
+Credentials	Modify	set_r_e_s_UID	setresuid	ruid;euid;suid		"Sets the real UID, the effective UID, and the saved set-user-ID of the calling process."	https://man7.org/linux/man-pages/man2/setresuid.2.html
+Credentials	Read	get_r_limit	getrlimit			Gets the system resource limit.	https://man7.org/linux/man-pages/man2/getrlimit.2.html
+Credentials	Modify	set_r_limit	setrlimit			Sets the system resource limit.	https://man7.org/linux/man-pages/man2/setrlimit.2.html
+Credentials	Stat	get_r_usage	getrusage			"Gets resource usage measures for the calling process, its children or the calling thread."	https://man7.org/linux/man-pages/man2/getrusage.2.html
+Credentials	Read	get_priority	getpriority			Gets the highest priority (lowest numerical value) enjoyed by any of the specified processes.	https://man7.org/linux/man-pages/man2/getpriority.2.html
+Credentials	Modify	set_priority	setpriority	which;who		Sets the priorities of all of the specified processes to the specified value.	https://man7.org/linux/man-pages/man2/setpriority.2.html
+Credentials	Read	cap_get	capget			Gets the capabilities of the process by its ID.	https://man7.org/linux/man-pages/man2/capget.2.html
+Credentials	Modify	cap_set	capset			Sets the capabilities of the process by its ID.	https://man7.org/linux/man-pages/man2/capset.2.html
+Credentials	Modify	pr_ctl	prctl	op		Manipulates various aspects of the behavior of the calling thread or process.	https://man7.org/linux/man-pages/man2/prctl.2.html
+Credentials	Read	get_random	getrandom			Fills the given array with random bytes.	https://man7.org/linux/man-pages/man2/getrandom.2.html
+Credentials	Modify	set_ns	setns			Sets  a new namespace for the calling thread.	https://man7.org/linux/man-pages/man2/setns.2.html
+Credentials	Modify	pivot_root	pivot_root	target;source		Changes the root mount in the mount namespace of the calling process.	https://man7.org/linux/man-pages/man2/pivot_root.2.html
+Process	Create	clone	clone			Creates a new process by duplicating the calling process.	https://man7.org/linux/man-pages/man2/clone.2.html
+Process	Create	fork	fork			Creates a new process by duplicating the calling process.	https://man7.org/linux/man-pages/man2/fork.2.html
+Process	Create	v_fork	vfork			Creates a new process by duplicating the calling process.	https://man7.org/linux/man-pages/man2/vfork.2.html
+Process	Create	exec	execve	path		Executes the program referred to by the given path.	https://man7.org/linux/man-pages/man2/execve.2.html
+Process	Create	exec	fexecve	path		Executes the program referred to by the given path.	https://man7.org/linux/man-pages/man3/fexecve.3.html
+Process	Create	exec	execveat	path	"JoinPaths(0, 1)"	Executes the program referred to by the given path.	https://man7.org/linux/man-pages/man2/execveat.2.html
+Process	Modify	kill	kill	pid;sig		Sends any signal to any process group or process.	https://man7.org/linux/man-pages/man2/kill.2.html
+Process	Modify	reboot	reboot			"Reboots the system, or enables/disables the reboot keystroke."	https://man7.org/linux/man-pages/man2/reboot.2.html
+Process	Modify	k_exec_load	kexec_load			Loads a new kernel that can be executed later by the reboot method.	https://man7.org/linux/man-pages/man2/kexec_load.2.html
+Process	Modify	k_exec_load	kexec_file_load			Loads a new kernel that can be executed later by the reboot method.	https://man7.org/linux/man-pages/man2/kexec_file_load.2.html
+Process	Modify	modify_ldt	modify_ldt			Reads or writes the local descriptor table (LDT) for a process.	https://man7.org/linux/man-pages/man2/modify_ldt.2.html
+Process	Modify	init_module	init_module	file		Loads a kernel module.	https://man7.org/linux/man-pages/man2/init_module.2.html
+Process	Modify	init_module	finit_module	file		Loads a kernel module.	https://man7.org/linux/man-pages/man2/finit_module.2.html
+Process	Stat	perf_event_open	perf_event_open			Sets up performance monitoring.	https://man7.org/linux/man-pages/man2/perf_event_open.2.html
+File	Modify	sync_fs	sync			Commits filesystem caches to disk.	https://man7.org/linux/man-pages/man2/sync.2.html
+File	Modify	sync_fs	syncfs	path		Commits filesystem caches to disk.	https://man7.org/linux/man-pages/man2/syncfs.2.html
+File	Modify	f_sync	fsync	path		Synchronizes a file's in-core state with storage device.	https://man7.org/linux/man-pages/man2/fsync.2.html
+File	Modify	f_sync	fdatasync	path		Synchronizes a file's in-core state with storage device.	https://man7.org/linux/man-pages/man2/fdatasync.2.html
+File	Modify	sync_file_range	sync_file_range	path		Synchronizes the specified segment of the file with disk.	https://man7.org/linux/man-pages/man2/sync_file_range.2.html
+File	Modify	acct	acct	path		Enables or disables process accounting.	https://man7.org/linux/man-pages/man2/acct.2.html
+File	Modify	ch_dir	chdir	path		Changes the current working directory of the calling process to the given directory.	https://man7.org/linux/man-pages/man2/chdir.2.html
+File	Modify	ch_dir	fchdir	path		Changes the current working directory of the calling process to the given directory.	https://man7.org/linux/man-pages/man2/fchdir.2.html
+File	Modify	ch_mod	chmod	path;mod		Changes permissions of the given file.	https://man7.org/linux/man-pages/man2/chmod.2.html
+File	Modify	ch_mod	fchmod	path;mod		Changes permissions of the given file.	https://man7.org/linux/man-pages/man2/fchmod.2.html
+File	Modify	ch_mod	fchmodat	path;mod	"JoinPaths(0, 1);Arg(2)"	Changes permissions of the given file.	https://man7.org/linux/man-pages/man2/fchmodat.2.html
+File	Modify	ch_own	chown	path;owner;group		Changes the owner and group of the given file.	https://man7.org/linux/man-pages/man2/chown.2.html
+File	Modify	ch_own	fchown	path;owner;group		Changes the owner and group of the given file.	https://man7.org/linux/man-pages/man2/fchown.2.html
+File	Modify	ch_own	lchown	path;owner;group		Changes the owner and group of the given file.	https://man7.org/linux/man-pages/man2/lchown.2.html
+File	Modify	ch_own	fchownat	path;owner;group	"JoinPaths(0, 1);Arg(2);Arg(3)"	Changes the owner and group of the given file.	https://man7.org/linux/man-pages/man2/fchownat.2.html
+File	Create	open	open	path		Opens the given file.	https://man7.org/linux/man-pages/man2/open.2.html
+File	Create	open	openat	path	"JoinPaths(0, 1)"	Opens the given file.	https://man7.org/linux/man-pages/man2/openat.2.html
+File	Create	open	openat2	path	"JoinPaths(0, 1)"	Opens the given file.	https://man7.org/linux/man-pages/man2/openat2.2.html
+File	Create	create	creat	path		Opens and possibly creates the given file.	https://man7.org/linux/man-pages/man2/creat.2.html
+File	Modify	close	close	path		Closes the given file.	https://man7.org/linux/man-pages/man2/close.2.html
+File	Modify	copy_file_range	copy_file_range	source;target	Arg(0);Arg(2)	Copies a range of data from one file to another.	https://man7.org/linux/man-pages/man2/copy_file_range.2.html
+File	Modify	send_file	sendfile	source;target		Copies a range of data from one file to another.	https://man7.org/linux/man-pages/man2/sendfile.2.html
+File	Modify	f_lock	flock	file;op		Applies or removes an advisory lock on an open file.	https://man7.org/linux/man-pages/man2/flock.2.html
+File	Read	get_x_attr	getxattr	file;attr		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/getxattr.2.html
+File	Read	get_x_attr	lgetxattr	file;attr		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/lgetxattr.2.html
+File	Read	get_x_attr	fgetxattr	file;attr		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/fgetxattr.2.html
+File	Read	list_x_attr	listxattr	file		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/listxattr.2.html
+File	Read	list_x_attr	llistxattr	file		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/llistxattr.2.html
+File	Read	list_x_attr	flistxattr	file		Gets the list of extended attribute names associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/flistxattr.2.html
+File	Modify	set_x_attr	setxattr	file;attr		Sets the value of the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/setxattr.2.html
+File	Modify	set_x_attr	lsetxattr	file;attr		Sets the value of the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/lsetxattr.2.html
+File	Modify	set_x_attr	fsetxattr	file;attr		Sets the value of the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/fsetxattr .2.html
+File	Modify	remove_x_attr	removexattr	file;attr		Removes the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/removexattr.2.html
+File	Modify	remove_x_attr	lremovexattr	file;attr		Removes the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/lremovexattr.2.html
+File	Modify	remove_x_attr	fremovexattr	file;attr		Removes the extended attribute identified by name and associated with the given path in the filesystem.	https://man7.org/linux/man-pages/man2/fremovexattr.2.html
+File	Modify	truncate	truncate	file		Truncates the given file.	https://man7.org/linux/man-pages/man2/truncate.2.html
+File	Modify	truncate	ftruncate	file		Truncates the given file.	https://man7.org/linux/man-pages/man2/ftruncate.2.html
+File	Modify	utime	futimesat	file	"JoinPaths(0, 1)"	Updates the timestamps of a file with nanosecond precision.	https://man7.org/linux/man-pages/man2/futimesat.2.html
+File	Modify	utime	utimensat	file	"JoinPaths(0, 1)"	Updates the timestamps of a file with nanosecond precision.	https://man7.org/linux/man-pages/man2/utimensat.2.html
+File	Modify	utime	futimens	file		Updates the timestamps of a file with nanosecond precision.	https://man7.org/linux/man-pages/man2/utimensat.2.html
+File	Modify	utime	utime	file		Changes the file last access and modification times.	https://man7.org/linux/man-pages/man2/utime.2.html
+File	Modify	utime	utimes	file		Changes the file last access and modification times.	https://man7.org/linux/man-pages/man2/utimes.2.html
+File	Read	getcwd	getcwd			Gets an absolute pathname of the current working directory.	https://man7.org/linux/man-pages/man2/getcwd.2.html
+File	Read	get_dir_entries	getdents	dir		Gets the directory entries.	https://man7.org/linux/man-pages/man2/getdents.2.html
+File	Read	get_dir_entries	getdents64	dir		Gets the directory entries.	https://man7.org/linux/man-pages/man2/getdents64.2.html
+File	Modify	i_notify_add_watch	inotify_add_watch	path	Arg(1)	"Adds a new watch, or modifies an existing watch, for the given file."	https://man7.org/linux/man-pages/man2/inotify_add_watch.2.html
+File	Modify	io_ctl	ioctl	path;op		Manipulates the given file by using specified operation.	https://man7.org/linux/man-pages/man2/ioctl.2.html
+File	Create	sym_link	symlink	path;alias		Creates a symbolic link to the given file or directory.	https://man7.org/linux/man-pages/man2/symlink.2.html
+File	Create	sym_link	symlinkat	path;alias	"Arg(0);JoinPaths(1, 2)"	Creates a symbolic link to the given file or directory.	https://man7.org/linux/man-pages/man2/symlinkat.2.html
+File	Read	read_link	readlink	alias		Gets the value of the given symbolic link.	https://man7.org/linux/man-pages/man2/readlink.2.html
+File	Read	read_link	readlinkat	alias	"JoinPaths(0, 1)"	Gets the value of the given symbolic link.	https://man7.org/linux/man-pages/man2/readlinkat.2.html
+File	Create	link	link	path;alias		Creates a new link (also known as a hard link) to the given file or directory.	https://man7.org/linux/man-pages/man2/link.2.html
+File	Create	link	linkat	path;alias	"JoinPaths(0, 1);JoinPaths(2, 3)"	Creates a new link (also known as a hard link) to the given file or directory.	https://man7.org/linux/man-pages/man2/linkat.2.html
+File	Delete	un_link	unlink	alias		Deletes a name from the filesystem.	https://man7.org/linux/man-pages/man2/unlink.2.html
+File	Delete	un_linkat	unlinkat	alias	"JoinPaths(0, 1)"	Deletes a name from the filesystem.	https://man7.org/linux/man-pages/man2/unlinkat.2.html
+File	Modify	rename	rename	source;target		"Renames a file, moving it between directories if required."	https://man7.org/linux/man-pages/man2/rename.2.html
+File	Modify	rename	renameat	source;target	"JoinPaths(0, 1);JoinPaths(2, 3)"	"Renames a file, moving it between directories if required."	https://man7.org/linux/man-pages/man2/renameat.2.html
+File	Modify	rename	renameat2	source;target	"JoinPaths(0, 1);JoinPaths(2, 3)"	"Renames a file, moving it between directories if required."	https://man7.org/linux/man-pages/man2/renameat2.2.html
+File	Create	mk_dir	mkdir	path		Creates the given directory.	https://man7.org/linux/man-pages/man2/mkdir.2.html
+File	Create	mk_dir	mkdirat	path	"JoinPaths(0, 1)"	Creates the given directory.	https://man7.org/linux/man-pages/man2/mkdirat.2.html
+File	Delete	rm_dir	rmdir	path		"Deletes a directory, which must be empty."	https://man7.org/linux/man-pages/man2/rmdir.2.html
+File	Create	mk_nod	mknod	path		"Creates a filesystem node (file, device special file, or named pipe) by the given path."	https://man7.org/linux/man-pages/man2/mknod.2.html
+File	Create	mk_nod	mknodat	path	"JoinPaths(0, 1)"	"Creates a filesystem node (file, device special file, or named pipe) by the given path."	https://man7.org/linux/man-pages/man2/mknodat.2.html
+File	Modify	m_map	mmap	path	Arg(4)	Creates a new mapping in the virtual address space of the calling process.	https://man7.org/linux/man-pages/man2/mmap.2.html
+File	Modify	m_sync	msync			Flushes changes made to the in-core copy of a file that was mapped into memory back to the filesystem.	https://man7.org/linux/man-pages/man2/msync.2.html
+File	Create	mount	mount	source;target		Attaches the given source filesystem to the specified target location.	https://man7.org/linux/man-pages/man2/mount.2.html
+File	Delete	umount	umount	target		Removes the attachment of the (topmost) filesystem mounted on the given target.	https://man7.org/linux/man-pages/man2/umount.2.html
+File	Delete	umount	umount2	target		Removes the attachment of the (topmost) filesystem mounted on the given target.	https://man7.org/linux/man-pages/man2/umount2.2.html
+File	Read	read	read	path		Reads from the given file to a buffer.	https://man7.org/linux/man-pages/man2/read.2.html
+File	Read	read	pread	path		Reads from the given file to a buffer.	https://linux.die.net/man/2/pread
+File	Read	read	pread64	path		Reads from the given file to a buffer.	https://linux.die.net/man/2/pread64
+File	Read	read	readv	path		Reads from the given file into multiple buffers.	https://man7.org/linux/man-pages/man2/readv.2.html
+File	Read	read	preadv	path		Reads from the given file into multiple buffers.	https://man7.org/linux/man-pages/man2/preadv.2.html
+File	Read	read	preadv2	path		Reads from the given file into multiple buffers.	https://man7.org/linux/man-pages/man2/preadv2.2.html
+File	Read	read_ahead	readahead	path		Reads the specified part of the given file into the page cache.	https://man7.org/linux/man-pages/man2/readahead.2.html
+File	Modify	write	write	path		Writes a buffer of data to the given file.	https://man7.org/linux/man-pages/man2/write.2.html
+File	Modify	write	pwrite	path		Writes a buffer of data to the given file.	https://linux.die.net/man/2/pwrite
+File	Modify	write	pwrite64	path		Writes a buffer of data to the given file.	https://linux.die.net/man/2/pwrite64
+File	Modify	write	writev	path		Writes buffers of data to the given file.	https://man7.org/linux/man-pages/man2/writev.2.html
+File	Modify	write	pwritev	path		Writes buffers of data to the given file.	https://man7.org/linux/man-pages/man2/pwritev.2.html
+File	Modify	write	pwritev2	path		Writes buffers of data to the given file.	https://man7.org/linux/man-pages/man2/pwritev.2.html
+File	Modify	quota_ctl	quotactl	op		Manipulats disk quotas.	https://man7.org/linux/man-pages/man2/quotactl.2.html
+File	Modify	swapon	swapon	path		Starts swapping to given file.	https://man7.org/linux/man-pages/man2/swapon.2.html
+File	Modify	swapoff	swapoff	path		Stops swapping to given file.	https://man7.org/linux/man-pages/man2/swapoff.2.html
+File	Stat	stat	stat	path		Gets the file status.	https://man7.org/linux/man-pages/man2/stat.2.html
+File	Stat	stat	fstat	path		Gets the file status.	https://man7.org/linux/man-pages/man2/fstat.2.html
+File	Stat	stat	lstat	path		Gets the file status.	https://man7.org/linux/man-pages/man2/lstat.2.html
+File	Stat	stat	fstatat	path	"JoinPaths(0, 1)"	Gets the file status.	https://man7.org/linux/man-pages/man2/fstatat.2.html
+File	Stat	stat	newfstatat	path	"JoinPaths(0, 1)"	Gets the file status.	https://man7.org/linux/man-pages/man2/newfstatat.2.html
+File	Stat	stat	fstatat64	path	"JoinPaths(0, 1)"	Gets the file status.	https://man7.org/linux/man-pages/man2/fstatat64.2.html
+File	Stat	stat	statx	path		Gets the file status.	https://man7.org/linux/man-pages/man2/statx.2.html
+File	Stat	stat_fs	statfs	path		Gets the filesystem statistics.	https://man7.org/linux/man-pages/man2/statfs.2.html
+File	Stat	stat_fs	fstatfs	path		Gets the filesystem statistics.	https://man7.org/linux/man-pages/man2/statfs.2.html
+File	Stat	stat_fs	ustat			Gets the filesystem statistics.	https://man7.org/linux/man-pages/man2/statfs.2.html
+File	Create	io_uring_setup	io_uring_setup			Sets up a submission queue (SQ) and completion queue (CQ) in the kernel.	https://man7.org/linux/man-pages/man2/io_uring_setup.2.html
+File	Create	io_uring_setup	io_uring_queue_init			Sets up a submission queue (SQ) and completion queue (CQ) in the kernel.	https://man7.org/linux/man-pages/man3/io_uring_queue_init.3.html
+File	Create	io_uring_setup	io_uring_queue_init_params			Sets up a submission queue (SQ) and completion queue (CQ) in the kernel.	https://man7.org/linux/man-pages/man3/io_uring_queue_init_params.3.html
+File	Create	io_uring_setup	io_uring_queue_init_mem			Sets up a submission queue (SQ) and completion queue (CQ) in the kernel.	https://man7.org/linux/man-pages/man3/io_uring_queue_init_mem.3.html
+File	Modify	io_uring_enter	io_uring_enter			Initiates and/or completes asynchronous I/O.	https://man7.org/linux/man-pages/man2/io_uring_enter.2.html
+File	Modify	io_uring_enter	io_uring_enter2			Initiates and/or completes asynchronous I/O.	https://man7.org/linux/man-pages/man2/io_uring_enter2.2.html
+File	Read	io_uring_get_sqe	io_uring_get_sqe			Gets the next available submission queue (SQ) entry from the submission queue.	https://man7.org/linux/man-pages/man3/io_uring_get_sqe.3.html
+File	Read	io_uring_prep_read	io_uring_prep_read			Prepares an I/O read request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_read.3.html
+File	Read	io_uring_prep_read	io_uring_prep_readv			Prepares an I/O vector read request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_readv.3.html
+File	Read	io_uring_prep_read	io_uring_prep_readv2			Prepares an I/O vector read request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_readv2.3.html
+File	Modify	io_uring_prep_write 	io_uring_prep_write			Prepares an I/O write request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_write.3.html
+File	Modify	io_uring_prep_write 	io_uring_prep_writev			Prepares an I/O vector write request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_writev.3.html
+File	Modify	io_uring_prep_write 	io_uring_prep_writev2			Prepares an I/O vector write request for the the submission queue (SQ).	https://man7.org/linux/man-pages/man3/io_uring_prep_writev2.3.html
+File	Modify	io_uring_submit	io_uring_submit			Submits the next events to the submission queue (SQ) belonging to the ring.	https://man7.org/linux/man-pages/man3/io_uring_submit.3.html
+File	Read	io_uring_wait_cqe	io_uring_wait_cqe			Waits for an IO completion from the queue (CQ) belonging to the ring.	https://man7.org/linux/man-pages/man3/io_uring_wait_cqe.3.html
+File	Delete	io_uring_queue_exit	io_uring_queue_exit			Releases all resources acquired and initialized for thre ring.	https://man7.org/linux/man-pages/man3/io_uring_queue_exit.3.html
+IPC	Create	mq_open	mq_open			Creates a new POSIX message queue or opens an existing queue.	https://man7.org/linux/man-pages/man2/mq_open.2.html
+IPC	Modify	mq_send	mq_send			Sends the given message to the specified message queue.	https://man7.org/linux/man-pages/man2/mq_timedsend.2.html
+IPC	Modify	mq_send	mq_timedsend			Sends the given message to the specified message queue.	https://man7.org/linux/man-pages/man2/mq_timedsend.2.html
+IPC	Read	mq_receive	mq_receive			Receives a message from the given message queue.	https://man7.org/linux/man-pages/man2/mq_timedreceive.2.html
+IPC	Read	mq_receive	mq_timedreceive			Receives a message from the given message queue.	https://man7.org/linux/man-pages/man2/mq_timedreceive.2.html
+IPC	Modify	splice	splice	source;target		Moves data between two file descriptors without copying between kernel address space and user address space.	https://man7.org/linux/man-pages/man2/splice.2.html
+IPC	Modify	vmsplice	vmsplice			Transfers data from the given pipe to the specified buffer or vice versa.	https://man7.org/linux/man-pages/man2/vmsplice.2.html
+IPC	Read	pipe	pipe	path		"Creates a pipe, a unidirectional data channel that can be used for interprocess communication."	https://man7.org/linux/man-pages/man2/pipe.2.html
+IPC	Read	pipe2	pipe2	path		"Creates a pipe, a unidirectional data channel that can be used for interprocess communication."	https://man7.org/linux/man-pages/man2/pipe2.2.html
+IPC	Read	tee	tee	source;target		Duplicates the given source pipe content to the target one.	https://man7.org/linux/man-pages/man2/tee.2.html
+IPC	Modify	msg_ctl	msgctl			Manipulates the System V message queue.	https://man7.org/linux/man-pages/man2/msgctl.2.html
+IPC	Read	msgrcv	msgrcv			Receives a message from the System V message queue.	https://man7.org/linux/man-pages/man2/msgrcv.2.html
+IPC	Modify	msgsnd	msgsnd			Sends the given message to the System V message queue.	https://man7.org/linux/man-pages/man2/msgsnd.2.html
+IPC	Create	socket_pair	socketpair			Create a pair of connected sockets to IPC.	https://man7.org/linux/man-pages/man2/socketpair.2.html
+Memory	Modify	m_lock	mlock			"Locks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/mlock.2.html
+Memory	Modify	m_lock	mlock2			"Locks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/mlock2.2.html
+Memory	Modify	m_lock	mlockall			"Locks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/mlockall.2.html
+Memory	Modify	m_unlock	munlock			"Unlocks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/munlock.2.html
+Memory	Modify	m_unlock	munlockall			"Unlocks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/munlockall.2.html
+Network	Create	socket	socket			Creates an endpoint for communication and returns a file descriptor that refers to that endpoint.	https://man7.org/linux/man-pages/man2/socket.2.html
+Network	Modify	bind	bind			Assigns the given socket with the specified address.	https://man7.org/linux/man-pages/man2/bind.2.html
+Network	Modify	listen	listen			Marks the given socket as passive that it will be used with the accept method to process incoming connections.	https://man7.org/linux/man-pages/man2/listen.2.html
+Network	Modify	accept	accept			Extracts the first connection request on the queue of pending connections for the listening socket.	https://man7.org/linux/man-pages/man2/accept.2.html
+Network	Modify	accept	accept4			Extracts the first connection request on the queue of pending connections for the listening socket.	https://man7.org/linux/man-pages/man2/accept4.2.html
+Network	Modify	connect	connect			Connects the given socket.	https://man7.org/linux/man-pages/man2/connect.2.html
+Network	Read	recv	recv			Receives a message from the given socket.	https://man7.org/linux/man-pages/man2/recv.2.html
+Network	Read	recv	recvfrom			Receives a message from the given socket.	https://man7.org/linux/man-pages/man2/recvfrom.2.html
+Network	Read	recv	recvmsg			Receives a message from the given socket.	https://man7.org/linux/man-pages/man2/recvmsg.2.html
+Network	Read	recv	recvmmsg			Receives multiple messages from the given socket.	https://man7.org/linux/man-pages/man2/recvmmsg.2.html
+Network	Modify	send	send			Sends the given message to the specified connected socket.	https://man7.org/linux/man-pages/man2/send.2.html
+Network	Modify	send	sendto			Sends the given message to the specified connected socket.	https://man7.org/linux/man-pages/man2/sendto.2.html
+Network	Modify	send	sendmsg			Sends the given message to the specified connected socket.	https://man7.org/linux/man-pages/man2/sendmsg.2.html
+Network	Modify	send	sendmmsg			Sends the given messages to the specified connected socket.	https://man7.org/linux/man-pages/man2/sendmmsg.2.html
+Network	Modify	shutdown	shutdown			Shuts down part of a full-duplex connection.	https://man7.org/linux/man-pages/man2/shutdown.2.html

@@ -1,0 +1,72 @@
+name: Build AssertSyscall
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  DOTNET_VERSION: '8.0'
+  NUGET_GITHUB_SOURCE: 'https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json'
+  ASSERT_SYSCALL_TRACER_DIR: '${{ github.workspace }}/bin'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install apt-get package
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y strace
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Set variables
+      run: |
+        echo "ASSERT_SYSCALL_TRACER_DIR=${{ env.ASSERT_SYSCALL_TRACER_DIR }}" >> $GITHUB_ENV
+
+    - name: Build AssertSyscall.Tracer
+      run: dotnet publish AssertSyscall.Tracer/AssertSyscall.Tracer.csproj --no-restore -c Release -o $ASSERT_SYSCALL_TRACER_DIR -p:GenerateDocumentationFile=false
+
+    - name: Run AssertSyscall.Tests
+      run: dotnet test AssertSyscall.Tests/AssertSyscall.Tests.csproj --no-restore -c Release
+
+    - name: Run AssertSyscall.NUnit.Tests
+      run: dotnet test AssertSyscall.NUnit.Tests/AssertSyscall.NUnit.Tests.csproj --no-restore -c Release
+
+    - name: Pack AssertSyscall
+      run: dotnet pack AssertSyscall/AssertSyscall.csproj --no-restore -c Release -o $ASSERT_SYSCALL_TRACER_DIR -p:IncludeTracer=true -p:TracerDir=$ASSERT_SYSCALL_TRACER_DIR
+
+    - name: Pack AssertSyscall.NUnit
+      run: dotnet pack AssertSyscall.NUnit/AssertSyscall.NUnit.csproj --no-restore -c Release -o $ASSERT_SYSCALL_TRACER_DIR
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-packages
+        path: |
+          $ASSERT_SYSCALL_TRACER_DIR/*.nupkg
+
+    - name: Publish NuGet to GitHub Packages
+      run: |
+        dotnet nuget push $ASSERT_SYSCALL_TRACER_DIR/*.nupkg \
+          --skip-duplicate \
+          --source ${{ env.NUGET_GITHUB_SOURCE }} \
+          --api-key ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../AssertSyscall.targets" />
+
+  <PropertyGroup>
+    <PackageId>AssertSyscall</PackageId>
+    <Title>AssertSyscall</Title>
+    <Description>Provides the core functionality to trace system calls of the current .NET process on Linux.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Condition="$(IncludeTracer)" Include="$(TracerDir)/AssertSyscall.Tracer" Pack="true" PackagePath="runtimes/any/native/">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Tracing\Linux\STraceOutputParser.tt">
+      <LastGenOutput>STraceOutputParser.generated.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Tracing\Linux\STraceOutputParser.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>STraceOutputParser.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>AssertSyscall.Tracer</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>AssertSyscall.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>AssertSyscall.NUnit</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>
