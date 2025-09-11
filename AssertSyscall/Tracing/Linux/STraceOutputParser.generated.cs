@@ -204,7 +204,7 @@ internal partial class STraceOutputParser
         KnownFunctions["munlock"] = new(SyscallCategory.Memory, SyscallType.Modify, "m_unlock", new FuncParams());
         KnownFunctions["munlockall"] = new(SyscallCategory.Memory, SyscallType.Modify, "m_unlock", new FuncParams());
         KnownFunctions["socket"] = new(SyscallCategory.Network, SyscallType.Create, "socket", new FuncParams());
-        KnownFunctions["bind"] = new(SyscallCategory.Network, SyscallType.Modify, "bind", new FuncParams());
+        KnownFunctions["bind"] = new(SyscallCategory.Network, SyscallType.Modify, "bind", new FuncParams().Add("port", v => v.ArgComplexProperty(1, "sin_port")).Add("addr", v => v.ArgComplexProperty(1, "sin_addr")));
         KnownFunctions["listen"] = new(SyscallCategory.Network, SyscallType.Modify, "listen", new FuncParams());
         KnownFunctions["accept"] = new(SyscallCategory.Network, SyscallType.Modify, "accept", new FuncParams());
         KnownFunctions["accept4"] = new(SyscallCategory.Network, SyscallType.Modify, "accept", new FuncParams());

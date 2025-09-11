@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <AssertSyscallVersion>0.1.0</AssertSyscallVersion>
+    <AssertSyscallVersion>0.2.0</AssertSyscallVersion>
     <IncludeTracer>false</IncludeTracer>
     <TracerDir></TracerDir>
   </PropertyGroup>

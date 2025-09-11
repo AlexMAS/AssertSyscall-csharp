@@ -190,7 +190,7 @@ Memory	Modify	m_lock	mlockall			"Locks the calling process's virtual address spa
 Memory	Modify	m_unlock	munlock			"Unlocks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/munlock.2.html
 Memory	Modify	m_unlock	munlockall			"Unlocks the calling process's virtual address space into RAM, preventing that memory from being paged to the swap area."	https://man7.org/linux/man-pages/man2/munlockall.2.html
 Network	Create	socket	socket			Creates an endpoint for communication and returns a file descriptor that refers to that endpoint.	https://man7.org/linux/man-pages/man2/socket.2.html
-Network	Modify	bind	bind			Assigns the given socket with the specified address.	https://man7.org/linux/man-pages/man2/bind.2.html
+Network	Modify	bind	bind	port;addr	"ArgComplexProperty(1, ""sin_port"");ArgComplexProperty(1, ""sin_addr"")"	Assigns the given socket with the specified address.	https://man7.org/linux/man-pages/man2/bind.2.html
 Network	Modify	listen	listen			Marks the given socket as passive that it will be used with the accept method to process incoming connections.	https://man7.org/linux/man-pages/man2/listen.2.html
 Network	Modify	accept	accept			Extracts the first connection request on the queue of pending connections for the listening socket.	https://man7.org/linux/man-pages/man2/accept.2.html
 Network	Modify	accept	accept4			Extracts the first connection request on the queue of pending connections for the listening socket.	https://man7.org/linux/man-pages/man2/accept4.2.html

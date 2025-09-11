@@ -52,4 +52,10 @@ public static class SyscallExtensions
             (emptyPath && string.IsNullOrEmpty(t))
             || (!emptyPath && !string.IsNullOrEmpty(t) && Regex.IsMatch(path, t)));
     }
+
+    public static IEnumerable<Syscall> NetworkModifies(this IEnumerable<Syscall> syscalls)
+    {
+        return syscalls.Where(i => i.Category == SyscallCategory.Network
+            && (i.Type == SyscallType.Modify));
+    }
 }

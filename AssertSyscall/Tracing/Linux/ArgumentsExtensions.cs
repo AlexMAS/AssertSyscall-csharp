@@ -1,10 +1,56 @@
-﻿namespace AssertSyscall.Tracing.Linux;
+﻿using System.Text.RegularExpressions;
 
-public static class ArgumentsExtensions
+namespace AssertSyscall.Tracing.Linux;
+
+public static partial class ArgumentsExtensions
 {
     public static string Arg(this IReadOnlyList<string> values, int index)
     {
         return (index >= 0 && index < values.Count) ? values[index] : "";
+    }
+
+    public static string ArgProperty(this IReadOnlyList<string> values, int index, string property)
+    {
+        if (index >= 0 && index < values.Count)
+        {
+            var arg = values[index];
+            var props = ScalarProperties().Matches(arg);
+
+            if (props != null)
+            {
+                foreach (Match prop in props)
+                {
+                    if (string.Equals(prop.Groups["p"].Value, property, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return prop.Groups["v"].Value;
+                    }
+                }
+            }
+        }
+
+        return "";
+    }
+
+    public static string ArgComplexProperty(this IReadOnlyList<string> values, int index, string property)
+    {
+        if (index >= 0 && index < values.Count)
+        {
+            var arg = values[index];
+            var props = ComplexProperties().Matches(arg);
+
+            if (props != null)
+            {
+                foreach (Match prop in props)
+                {
+                    if (string.Equals(prop.Groups["p"].Value, property, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        return prop.Groups["v"].Value;
+                    }
+                }
+            }
+        }
+
+        return "";
     }
 
     public static string JoinPaths(this IReadOnlyList<string> arguments, int basePathIndex, int relativePathIndex)
@@ -50,4 +96,11 @@ public static class ArgumentsExtensions
 
         return basePath + relativePath.TrimStart('/');
     }
+
+
+    [GeneratedRegex("(?<p>\\w+)\\s*=\\s*(?<v>.+?)[,}]", RegexOptions.Compiled | RegexOptions.CultureInvariant)]
+    private static partial Regex ScalarProperties();
+
+    [GeneratedRegex("(?<p>\\w+)\\s*=\\s*(?<m>\\w+)\\s*\\(\\s*(?<v>.+?)\\s*\\)", RegexOptions.Compiled | RegexOptions.CultureInvariant)]
+    private static partial Regex ComplexProperties();
 }

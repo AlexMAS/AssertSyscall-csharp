@@ -31,7 +31,7 @@ foreach (var line in lines.Skip(1))
     var alias = cells[2];
     var func = cells[3];
     var parameters = cells[4].Trim('"').Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-    var transforms = cells[5].Trim('"').Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+    var transforms = cells[5].Trim('"').Replace("\"\"", "\"").Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
     var funcParams = new StringBuilder("new FuncParams()");
 
